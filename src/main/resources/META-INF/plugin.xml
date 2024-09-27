@@ -1,0 +1,71 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.mobin.plugin</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>FlinkSQL Plugin</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="" url="https://github.com/Mobin-F">MOBIN</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="com.mobin.plugin.SqlExecutorSettings"/>
+        <projectConfigurable instance="com.mobin.plugin.SqlExecutorSettingsConfigurable"
+                             displayName="SQL Executor Settings"
+                             id="com.mobin.plugin.SqlExecutorSettingsConfigurable"
+                             parentId="tools"/>
+    </extensions>
+
+    <actions>
+        <action id="com.mobin.plugin.RunSqlFileAction"
+                class="com.mobin.plugin.RunSqlFileAction"
+                text="Run FlinkSQL File"
+                description="Run the selected SQL file using the provided JAR">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+        <action id="com.mobin.plugin.StopSqlAction"
+                class="com.mobin.plugin.StopSqlAction"
+                text="Stop FlinkSQL"
+                description="Stop SQL execution">
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+        <action id="com.mobin.plugin.RestartSqlAction"
+                class="com.mobin.plugin.RestartSqlAction"
+                text="Restart FlinkSQL"
+                description="Restart SQL execution">
+            <add-to-group group-id="ToolbarRunGroup" anchor="last"/>
+        </action>
+        <action id="com.mobin.plugin.ConfigureFlinkLibAction"
+                class="com.mobin.plugin.ConfigureFlinkLibAction"
+                text="[flink-lib]"
+                description="Configure Flink Lib Directory">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+        <action id="FlinkSQL.ConfigureVMParams" 
+                class="com.mobin.plugin.ConfigureVMParamsAction" 
+                text="Configure Flink VM Parameters"
+                description="Configure VM parameters for FlinkSQL debugging">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="com.mobin.plugin.RunSqlFileAction"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="com.mobin.plugin.RunSqlFileAction"/>
+        </action>
+    </actions>
+</idea-plugin>
