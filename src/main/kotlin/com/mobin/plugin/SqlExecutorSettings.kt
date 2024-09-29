@@ -1,11 +1,13 @@
 package com.mobin.plugin
 
-import com.intellij.openapi.components.*
+import com.intellij.openapi.components.PersistentStateComponent
+import com.intellij.openapi.components.State
+import com.intellij.openapi.components.Storage
 import com.intellij.openapi.project.Project
 import com.intellij.util.xmlb.XmlSerializerUtil
 
 @State(
-    name = "com.example.dome1.SqlExecutorSettings",
+    name = "com.mobnin.plugin.SqlExecutorSettings",
     storages = [Storage("SqlExecutorPlugin.xml")]
 )
 class SqlExecutorSettings : PersistentStateComponent<SqlExecutorSettings> {

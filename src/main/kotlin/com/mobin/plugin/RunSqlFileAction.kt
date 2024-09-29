@@ -8,18 +8,18 @@ import com.intellij.execution.process.ProcessEvent
 import com.intellij.execution.ui.ConsoleView
 import com.intellij.execution.ui.ConsoleViewContentType
 import com.intellij.icons.AllIcons
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.*
+import com.intellij.openapi.fileEditor.FileDocumentManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
-import com.intellij.openapi.wm.ToolWindowManager
+import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.wm.RegisterToolWindowTask
 import com.intellij.openapi.wm.ToolWindowAnchor
+import com.intellij.openapi.wm.ToolWindowManager
 import java.awt.BorderLayout
 import java.io.File
 import javax.swing.JPanel
-import com.intellij.openapi.fileEditor.FileDocumentManager
-import com.intellij.openapi.vfs.LocalFileSystem
-import com.intellij.ide.util.PropertiesComponent
 
 class RunSqlFileAction : AnAction("Run FlinkSQL", "Run the selected SQL file", AllIcons.Actions.Execute) {
     companion object {

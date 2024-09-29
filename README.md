@@ -16,6 +16,20 @@ FlinkSQL-Plugin is an IntelliJ IDEA plugin developed 100% by cursor+claude3.5. I
 2. Configure Flink VM parameters: Set VM parameters, e.g., -agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005
 3. Configure Flink Lib Directory: Set the Flink lib directory where all Flink dependency JARs are located. Ensure all relevant dependencies are in this directory before running
 
+Mini dependency
+```
+Mlink-1.0-SNAPSHOT.jar
+flink-cep-1.18.1.jar
+flink-connector-files-1.18.1.jar
+flink-csv-1.18.1.jar
+flink-dist-1.18.1.jar
+flink-json-1.18.1.jar
+flink-scala_2.12-1.18.1.jar
+flink-table-api-java-uber-1.18.1.jar
+flink-table-planner-loader-1.18.1.jar
+flink-table-runtime-1.18.1.jar
+```
+
 ## Usage
 1. Download the plugin and install it in IDEA. No need to restart IDEA
 2. Create a new test.sql file, right-click and select Run FlinkSQL from the context menu

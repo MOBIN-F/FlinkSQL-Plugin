@@ -16,6 +16,20 @@ FlinkSQL-Plugin是一个由cursor+cluade3.5 100%开发的IDEA插件，用于在I
 2. Configure Flink VM parameters：配置VM参数，如：-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005
 3. Configure Flink Lib Directory：配置Flink的lib目录，Flink的依赖Jar都放在该目录下，运行之前请确保相关依赖都在该目录下
 
+最小依赖：
+```
+Mlink-1.0-SNAPSHOT.jar
+flink-cep-1.18.1.jar
+flink-connector-files-1.18.1.jar
+flink-csv-1.18.1.jar
+flink-dist-1.18.1.jar
+flink-json-1.18.1.jar
+flink-scala_2.12-1.18.1.jar
+flink-table-api-java-uber-1.18.1.jar
+flink-table-planner-loader-1.18.1.jar
+flink-table-runtime-1.18.1.jar
+```
+
 ## 使用方式
 1. 下载插件，在IDEA中安装插件，无需重启IDEA
 2. 新建test.sql，右键菜单选择Run FlinkSQL

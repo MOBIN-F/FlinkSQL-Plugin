@@ -1,10 +1,9 @@
 package com.mobin.plugin
 
+import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.ui.Messages
-import com.intellij.openapi.project.Project
-import com.intellij.ide.util.PropertiesComponent
 
 class ConfigureVMParamsAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
