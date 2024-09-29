@@ -31,8 +31,8 @@ flink-table-runtime-1.18.1.jar
 ```
 
 ## 使用方式
-1. 下载插件，在IDEA中安装插件，无需重启IDEA
-2. 下载[Flink版本](https://flink.apache.org/zh/downloads/)并解压，下载[FlinkSQL执行jar包](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/untagged-4500c7d0b0edb9d14aec/Mlink-1.0-SNAPSHOT.jar)，并放在${FLINK_HOME}/lib下
+1. [下载插件](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/Release-1.0/FlinkSQL-Plugin-1.0.zip)，在IDEA中安装插件，无需重启IDEA
+2. 下载[Flink](https://flink.apache.org/zh/downloads/)并解压，下载[FlinkSQL执行jar包](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/Release-1.0/Mlink-1.0-SNAPSHOT.jar)，并放在${FLINK_HOME}/lib下
 3. 新建test.sql，右键菜单选择Run FlinkSQL
 
 ## IDEA版本说明

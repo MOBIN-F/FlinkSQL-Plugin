@@ -31,8 +31,8 @@ flink-table-runtime-1.18.1.jar
 ```
 
 ## Usage
-1. Download the plugin and install it in IDEA. No need to restart IDEA
-2. Download[Flink版本](https://flink.apache.org/downloads/)and decompression,Download[FlinkSQL executes jars](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/untagged-4500c7d0b0edb9d14aec/Mlink-1.0-SNAPSHOT.jar),and put it under ${FLINK_HOME}/lib
+1. [Download the plugin](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/Release-1.0/FlinkSQL-Plugin-1.0.zip) and install it in IDEA. No need to restart IDEA
+2. Download [Flink](https://flink.apache.org/downloads/) and decompression,Download [FlinkSQL executes jars](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/Release-1.0/Mlink-1.0-SNAPSHOT.jar),and put it under ${FLINK_HOME}/lib
 3. Create a new test.sql file, right-click and select Run FlinkSQL from the context menu
 
 ## IDEA Version Compatibility
