@@ -18,7 +18,7 @@ FlinkSQL-Plugin is an IntelliJ IDEA plugin developed 100% by cursor+claude3.5. I
 
 Mini dependency
 ```
-Mlink-1.0-SNAPSHOT.jar
+Mlink-1.0-SNAPSHOT.jar --FlinkSQL executes jars
 flink-cep-1.18.1.jar
 flink-connector-files-1.18.1.jar
 flink-csv-1.18.1.jar
@@ -32,7 +32,8 @@ flink-table-runtime-1.18.1.jar
 
 ## Usage
 1. Download the plugin and install it in IDEA. No need to restart IDEA
-2. Create a new test.sql file, right-click and select Run FlinkSQL from the context menu
+2. Download[Flink版本](https://flink.apache.org/downloads/)and decompression,Download[FlinkSQL executes jars](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/untagged-4500c7d0b0edb9d14aec/Mlink-1.0-SNAPSHOT.jar),and put it under ${FLINK_HOME}/lib
+3. Create a new test.sql file, right-click and select Run FlinkSQL from the context menu
 
 ## IDEA Version Compatibility
 - IDEA 2022+

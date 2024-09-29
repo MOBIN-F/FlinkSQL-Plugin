@@ -18,7 +18,7 @@ FlinkSQL-Plugin是一个由cursor+cluade3.5 100%开发的IDEA插件，用于在I
 
 最小依赖：
 ```
-Mlink-1.0-SNAPSHOT.jar
+Mlink-1.0-SNAPSHOT.jar  --FlinkSQL执行jar包
 flink-cep-1.18.1.jar
 flink-connector-files-1.18.1.jar
 flink-csv-1.18.1.jar
@@ -32,7 +32,8 @@ flink-table-runtime-1.18.1.jar
 
 ## 使用方式
 1. 下载插件，在IDEA中安装插件，无需重启IDEA
-2. 新建test.sql，右键菜单选择Run FlinkSQL
+2. 下载[Flink版本](https://flink.apache.org/zh/downloads/)并解压，下载[FlinkSQL执行jar包](https://github.com/MOBIN-F/FlinkSQL-Plugin/releases/download/untagged-4500c7d0b0edb9d14aec/Mlink-1.0-SNAPSHOT.jar)，并放在${FLINK_HOME}/lib下
+3. 新建test.sql，右键菜单选择Run FlinkSQL
 
 ## IDEA版本说明
 - IDEA 2022+
