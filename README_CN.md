@@ -37,3 +37,6 @@ flink-table-runtime-1.18.1.jar
 
 ## IDEA版本说明
 - IDEA 2022+
+
+## Flink版本说明
+- Flink 1.15+
