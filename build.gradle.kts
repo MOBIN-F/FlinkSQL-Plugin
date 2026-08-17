@@ -1,7 +1,7 @@
 plugins {
     id("java")
-    id("org.jetbrains.kotlin.jvm") version "1.9.21"
-    id("org.jetbrains.intellij") version "1.16.1"
+    id("org.jetbrains.kotlin.jvm") version "2.0.21"
+    id("org.jetbrains.intellij.platform") version "2.1.0"
 }
 
 group = "com.mobin"
@@ -9,39 +9,61 @@ version = "1.0"
 
 repositories {
     mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
 }
 
-// Configure Gradle IntelliJ Plugin
-// Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
-intellij {
-    version.set("2023.1.5")
-    type.set("IC") // Target IDE Platform
+dependencies {
+    intellijPlatform {
+        intellijIdeaCommunity("2024.1") // 注意：建议使用已发布的稳定版本号，如 2024.1 或 2024.2
 
-    plugins.set(listOf(/* Plugin Dependencies */))
+        pluginVerifier()
+    }
+}
+
+// 2.x 版本中，通过 intellijPlatform 配置块进行插件元信息管理
+intellijPlatform {
+    pluginConfiguration {
+        ideaVersion {
+            sinceBuild = "223"
+            untilBuild = "262.*"
+        }
+    }
+
+    signing {
+        certificateChain = providers.environmentVariable("CERTIFICATE_CHAIN")
+        privateKey = providers.environmentVariable("PRIVATE_KEY")
+        password = providers.environmentVariable("PRIVATE_KEY_PASSWORD")
+    }
+
+    publishing {
+        token = providers.environmentVariable("PUBLISH_TOKEN")
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 tasks {
-    // Set the JVM compatibility versions
     withType<JavaCompile> {
         sourceCompatibility = "17"
         targetCompatibility = "17"
     }
-    withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
+
+    instrumentCode {
+        enabled = false
+    }
+    instrumentTestCode {
+        enabled = false
     }
 
-    patchPluginXml {
-        sinceBuild.set("223")
-        untilBuild.set("241.*")
+    buildSearchableOptions {
+        enabled = false
     }
 
-    signPlugin {
-        certificateChain.set(System.getenv("CERTIFICATE_CHAIN"))
-        privateKey.set(System.getenv("PRIVATE_KEY"))
-        password.set(System.getenv("PRIVATE_KEY_PASSWORD"))
-    }
-
-    publishPlugin {
-        token.set(System.getenv("PUBLISH_TOKEN"))
+    prepareJarSearchableOptions {
+        enabled = false
     }
 }
