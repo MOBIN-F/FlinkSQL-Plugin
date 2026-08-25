@@ -26,6 +26,7 @@
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
         <projectService serviceImplementation="com.mobin.plugin.SqlExecutorSettings"/>
+        <projectService serviceImplementation="com.mobin.plugin.SqlExecutionManager"/>
         <projectConfigurable instance="com.mobin.plugin.SqlExecutorSettingsConfigurable"
                              displayName="SQL Executor Settings"
                              id="com.mobin.plugin.SqlExecutorSettingsConfigurable"
